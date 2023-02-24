@@ -21,7 +21,7 @@ RUN python3 get-pip.py --user
 
 
 # Change Background to sth cool
-COPY assets/terraform-wallpaper.png  /usr/share/extra/backgrounds/bg_default.png
+COPY assets/terraform_wallpaper.jpeg  /usr/share/extra/backgrounds/bg_default.png
 
 # Install VS Code and extensions
 RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
