@@ -24,8 +24,8 @@ RUN python3 get-pip.py --user
 COPY assets/terraform_wallpaper.jpeg  /usr/share/extra/backgrounds/bg_default.png
 
 # Install VS Code and extensions
-RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-RUN sudo add-apt-repository 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
+RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add -
+RUN add-apt-repository 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
 RUN apt update
 RUN apt -y install code
 RUN code --install-extension ms-azuretools.vscode-docker
