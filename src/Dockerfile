@@ -28,13 +28,13 @@ RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | apt-key add 
 RUN add-apt-repository 'deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main'
 RUN apt update
 RUN apt -y install code
-RUN code --install-extension ms-azuretools.vscode-docker
-RUN code --install-extension hashicorp.terraform
-RUN code --install-extension davidanson.vscode-markdownlint
-RUN code --install-extension 4ops.packer
-RUN code --install-extension ms-python.python
-RUN code --install-extension redhat.vscode-yaml
-RUN code --install-extension redhat.ansible
+RUN code --no-sandbox --user-data-dir /home/root --install-extension ms-azuretools.vscode-docker
+RUN code --no-sandbox --user-data-dir /home/root --install-extension hashicorp.terraform
+RUN code --no-sandbox --user-data-dir /home/root --install-extension davidanson.vscode-markdownlint
+RUN code --no-sandbox --user-data-dir /home/root --install-extension 4ops.packer
+RUN code --no-sandbox --user-data-dir /home/root --install-extension ms-python.python
+RUN code --no-sandbox --user-data-dir /home/root --install-extension redhat.vscode-yaml
+RUN code --no-sandbox --user-data-dir /home/root --install-extension redhat.ansible
 
 # Install and configure Docker
 RUN apt -y install ca-certificates curl gnupg lsb-release
